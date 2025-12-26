@@ -13,7 +13,20 @@ function Navbar() {
   };
 
   return (
-    <nav className="w-full border-b border-gray-200 pb-6 pt-4 px-10">
+    <nav className="w-full border-b border-gray-200 pb-6 pt-4 px-10 ">
+      {/* Mobile Search Bar */}
+<div className="md:hidden px-4 mt-4 flex-col-reverse pb-8">
+  <div className="flex items-center gap-3 border border-gray-300 rounded-full px-4 py-3 shadow-sm">
+    
+    <FaSearch className="text-gray-500" size={16} />
+
+    <input
+      type="text"
+      placeholder="Search destinations"
+      className="flex-1 outline-none bg-transparent text-sm text-gray-700"
+    />
+  </div>
+</div>
       <div className="max-w-[1400px] mx-auto flex justify-between items-center">
 
         {/* Logo */}
@@ -136,6 +149,9 @@ function Navbar() {
           </div>
         </div>
       </div>
+      
+
+
     </nav>
   );
 }
