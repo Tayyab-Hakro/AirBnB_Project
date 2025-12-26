@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { PoperHomeLahore } from "../assets/Customapi";
 import { FaArrowRight, FaStar, FaHeart, FaArrowLeft } from "react-icons/fa";
-
+import {useNavigate} from "react-router-dom"
 function PopularLahore({title}) {
   const [StartIndx, SetStartIndx] = useState(0);
   const lastImg = 5;
-
+const navigate = useNavigate();
   const HandleNext = () => {
     SetStartIndx(prev => Math.min(prev + 1, PoperHomeLahore.length - lastImg));
   };
@@ -62,9 +62,9 @@ function PopularLahore({title}) {
                 <div className="absolute top-3 right-3 z-10">
                   <FaHeart className="text-white text-xl hover:text-red-500 transition" />
                 </div>
-
-                <img
-                  src={item.img}
+ 
+                <img onClick={() => navigate(`/page/${item.id}`)}
+                  src={item.img }
                   alt="Home"
                   className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
